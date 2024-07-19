@@ -10,4 +10,8 @@ SoftUni React Exam Project
 - [x] Add resources if any
 
 ## 2. Basic Components
- * Separate html into jsx components 
+- [x] Separate html into jsx components 
+- [x] Install react-router-dom
+- [x] Setup react-router-dom
+- [x] Add routes in App.jsx
+    * 
