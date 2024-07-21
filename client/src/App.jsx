@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer'
 import Home from './components/home/Home'
 import Login from './components/login/Login'
 import Error from './components/error/Error'
+import Register from './components/register/Register'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/*' element={<Error />}/>
+          <Route path='/register' element={<Register />}/>
         </Routes>
 
       </main>
