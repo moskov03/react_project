@@ -27,4 +27,4 @@ SoftUni React Exam Project
 
 
 
-    //vajno for stava htmlFor i class stava className
+    //vajno for stava htmlFor i class stava className i inputite nakraq im trqbva / tag
