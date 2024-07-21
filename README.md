@@ -15,3 +15,16 @@ SoftUni React Exam Project
 - [x] Setup react-router-dom
 - [x] Add routes in App.jsx
     * 
+
+
+
+
+
+
+
+
+
+
+
+
+    //vajno for stava htmlFor i class stava className
