@@ -1,0 +1,39 @@
+.content {
+    margin-top: 5%;
+  }
+  
+  .content h1 {
+    font-size: 88px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: black;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .content p {
+    line-height: 22px;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+  
+  .content .catalog {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 45%;
+    background: #dbd1c1;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+body{
+    background-image: url(../images/323376.jpg);
+    background-size: cover;
+    min-height: 100vh;
+}
