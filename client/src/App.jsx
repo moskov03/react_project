@@ -6,6 +6,7 @@ import Home from './components/home/Home'
 import Login from './components/login/Login'
 import Error from './components/error/Error'
 import Register from './components/register/Register'
+import Catalog from './components/catalog/Catalog'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login />}/>
           <Route path='/*' element={<Error />}/>
           <Route path='/register' element={<Register />}/>
+          <Route path='/catalog' element={<Catalog />}/>
         </Routes>
 
       </main>
