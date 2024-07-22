@@ -11,10 +11,9 @@ export default function Component() {
                         <li><Link to="/login">Login</Link></li>
                         <li><Link to="/register">Register</Link></li>
                         
-                        {/* <li><Link to="/creLinkte">Create</Link></li>
+                        {/* <li><Link to="/create">Create</Link></li>
                         <li><Link to="">Profile</Link></li>
                         <li><Link to="">Logout</Link></li> */}
-
                     </ul>
                 </div>
             </header>
