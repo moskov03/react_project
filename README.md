@@ -14,9 +14,15 @@ SoftUni React Exam Project
 - [x] Install react-router-dom
 - [x] Setup react-router-dom
 - [x] Add routes in App.jsx
-- [] Add links in the nav
-    * 
+- [x] Add links in the nav
 
+## 3. Create Service Layer
+- [] Abstract requester
+- [] Service layer architecture
+
+
+## 4. Page Implementations
+- []
 
 
 
