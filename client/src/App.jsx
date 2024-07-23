@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
+import mongoose from 'mongoose'
 
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
@@ -11,11 +12,15 @@ import Catalog from './components/catalog/Catalog'
 
 function App() {
 
+
+  mongoose.connect('mongodb://127.0.0.1:27017/react-project')
   // const apiCall = () => {
   //   axios.get('http://localhost:5050').then(() => {
   //     console.log('works apiCall');
   //   })
   // }
+
+  
 
   return (
     <>
