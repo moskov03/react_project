@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Login() {
     return (
         <>
@@ -10,7 +12,7 @@ export default function Login() {
                     <input type="password" name="" placeholder="Password.." />
                     <input type="submit" value="Submit" />
                 </form>
-                <p>Not have an account? <a href="/register">Register here</a></p>
+                <p>Not have an account? <Link to="/register">Register here</Link></p>
             </div>
         </>
     );

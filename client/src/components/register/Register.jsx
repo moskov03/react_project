@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Register() {
     return (
         <>
@@ -14,7 +16,7 @@ export default function Register() {
                     <input type="password" name="" placeholder="Confirm Password.." />
                     <input type="submit" value="Submit" />
                 </form>
-                <p>Already have an account? <a href="/login">Login here</a></p>
+                <p>Already have an account? <Link to="/login">Login here</Link></p>
             </div>
         </>
     );
