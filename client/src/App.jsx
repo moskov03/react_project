@@ -11,17 +11,17 @@ import Catalog from './components/catalog/Catalog'
 
 function App() {
 
-  const apiCall = () => {
-    axios.get('http://localhost:5050').then(() => {
-      console.log('works apiCall');
-    })
-  }
+  // const apiCall = () => {
+  //   axios.get('http://localhost:5050').then(() => {
+  //     console.log('works apiCall');
+  //   })
+  // }
 
   return (
     <>
       <Header />
       <main>
-      <button onClick={apiCall}>TEST</button>
+      {/* <button onClick={apiCall}>TEST</button> */}
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/login' element={<Login />}/>
