@@ -9,7 +9,19 @@ let dogSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    
+    description: {
+        type: String,
+        require:true
+    },
+    age:{
+        type: Number,
+        require: true
+    },
+    img: {
+        type: String,
+        require:true,
+        validate: /^https?:\/\//i
+    }
 }, {
     timestamps: true
 });
