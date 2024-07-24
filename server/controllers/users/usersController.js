@@ -2,10 +2,10 @@ const User = require('../../model/User')
 const bcrypt = require('bcrypt')
 
 exports.registerUser = async (req, res) => {
-    console.log(req.params);
+    console.log(req.body);
     const { username, email, password, repass } = req.body
-    // const salt = bcrypt.genSaltSync(10)
-    // const hashedPass = await bcrypt.hash(password, salt)
+    const salt = bcrypt.genSaltSync(10)
+    const hashedPass = await bcrypt.hash(password, salt)
 
     try {
         await User.create({ username: username, email: email, password: password })
