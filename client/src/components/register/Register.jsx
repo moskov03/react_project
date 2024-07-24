@@ -9,24 +9,24 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [confirmpassword, setRepass] = useState("");
 
-    const regUser = async (e) => {
-        e.preventDefault();
-        if (password !== confirmpassword) {
-            alert("Passwords do not match");
-            return;
-        }
-        try {
-            const response = await axios.post('http://localhost:5050/register', {
-                username: username,
-                email: email,
-                password: password,
-            });
-            console.log(response.data); // Handle the response as needed
-            // Optionally, redirect the user or show a success message
-        } catch (error) {
-            console.error("There was an error registering the user!", error);
-        }
-    };
+    // const regUser = async (e) => {
+    //     e.preventDefault();
+    //     if (password !== confirmpassword) {
+    //         alert("Passwords do not match");
+    //         return;
+    //     }
+    //     try {
+    //         const response = await axios.post('http://localhost:5050/register', {
+    //             username: username,
+    //             email: email,
+    //             password: password,
+    //         });
+    //         console.log(response.data); // Handle the response as needed
+    //         // Optionally, redirect the user or show a success message
+    //     } catch (error) {
+    //         console.error("There was an error registering the user!", error);
+    //     }
+    // };
 
     return (
         <>
