@@ -1,3 +1,5 @@
+const userRoute = require('../server/routes/user')
+
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -6,39 +8,29 @@ const mongoose = require('mongoose');
 // const mongooseConfig = require('../server/config/mongooseConfig')
 const Dog = require('../server/model/Dog')
 
+bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Parse JSON bodies
+app.use(bodyParser.json())
+
 app.use(cors())
+app.use(userRoute)
 
-app.get('/', (req, res) => {
-    res.send('Works')
-})
-
-app.get('/catalog', (req, res) => {
-    res.send('Works')
-})
-
-app.get('/login', (req, res) => {
-    res.send('Works')
-})
-
-app.get('/register', (req, res) => {
-    res.send('Works')
-})
 
 
 // opit da napravim db s hardcode 
-app.post('/', async (req, res) => {
-    console.log('i reach here');
-    try {
-        const dog = await Dog.create({ name: 'jinx', breed: 'janx', age: 6 })
-        console.log(dog);
-    } catch (error) {
-        console.log(error);
-    }
+// app.post('/', async (req, res) => {
+//     console.log('i reach here');
+//     try {
+//         const dog = await Dog.create({ name: 'jinx', breed: 'janx', age: 6 })
+//         console.log(dog);
+//     } catch (error) {
+//         console.log(error);
+//     }
 
-    res.send('test dog')
-})
-
-
+//     res.send('test dog')
+// })
 
 
 // app.listen(5050, async () => {
