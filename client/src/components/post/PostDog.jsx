@@ -20,7 +20,7 @@ export default function PostDog() {
 
             <label>Description:</label>
             <textarea id="description" name="" placeholder="..."></textarea>
-            <input type="submit" id="btn" value="Submit"></input>
+            <input type="submit" id="btn"  value="Submit"></input>
           </form>
         </div>
       </section>
