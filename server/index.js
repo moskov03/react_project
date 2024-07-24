@@ -23,6 +23,7 @@ app.get('/register', (req, res) => {
 })
 
 
+// opit da napravim db s hardcode 
 app.post('/', async (req, res) => {
     console.log('i reach here');
     try {

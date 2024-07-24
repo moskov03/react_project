@@ -8,6 +8,7 @@ import Login from './components/login/Login'
 import Error from './components/error/Error'
 import Register from './components/register/Register'
 import Catalog from './components/catalog/Catalog'
+import PostDog from './components/post/PostDog'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path='/*' element={<Error />}/>
           <Route path='/register' element={<Register />}/>
           <Route path='/catalog' element={<Catalog />}/>
+          <Route path='/postDog' element={<PostDog />}/>
         </Routes>
 
       </main>
