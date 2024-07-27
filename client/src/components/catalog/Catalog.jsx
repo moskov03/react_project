@@ -1,4 +1,13 @@
+import { useEffect, useState } from 'react';
+import * as dogsAPI from '../../api/dogsAPI'
+
 export default function Catalog() {
+    const [dogs, setDogs] = useState([])
+    
+    useEffect(() => {
+        dogsAPI.getAll()
+            .then(result => setDogs(result))
+    }, [])
 
     return (
         <>
