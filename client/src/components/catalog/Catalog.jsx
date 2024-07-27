@@ -1,4 +1,5 @@
 export default function Catalog() {
+
     return (
         <>
             <div className="catalog">
@@ -22,7 +23,7 @@ export default function Catalog() {
                         <button>Details</button>
                     </div>
                 </div>
-                
+
                 <div className="card">
                     <img src="path-to-dog-image.jpg" alt="Dog Image" />
                     <div className="details">
