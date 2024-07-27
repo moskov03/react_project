@@ -17,7 +17,7 @@ SoftUni React Exam Project
 - [x] Add links in the nav
 
 ## 3. Create Service Layer
-- [] Abstract requester
+- [x] Abstract requester
 - [] Service layer architecture
 
 
