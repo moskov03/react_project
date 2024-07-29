@@ -1,0 +1,18 @@
+{
+"742ff0e2-62d3-4c78-b3df-7cad665ed541": {
+        "name": "Oscar",
+        "breed": "GSD",
+        "age": "6",
+        "description": "cute doge",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXH7X7N1brTYAycmTjOZzgPZjQHZkjk612Ew&s",
+        "_id": "742ff0e2-62d3-4c78-b3df-7cad665ed541"
+    },
+    "628b4dd1-b200-4324-a29b-c116ef277650": {
+        "name": "Ivan",
+        "breed": "Doberman",
+        "age": "4",
+        "description": "cute doge",
+        "imageUrl": "https://media-be.chewy.com/wp-content/uploads/2021/06/02102805/Doberman-Pinscher_Featured-Image.jpg",
+        "_id": "628b4dd1-b200-4324-a29b-c116ef277650"
+    }
+}
