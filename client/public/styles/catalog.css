@@ -43,3 +43,9 @@
     background-color: white;
     cursor: pointer;
 } 
+
+.not-available{
+    font-size: 55px;
+    margin-bottom: 209px;
+    padding-top: 50px;
+}

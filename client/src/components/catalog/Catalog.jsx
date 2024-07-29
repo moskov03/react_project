@@ -4,7 +4,7 @@ import Card from './Card';
 
 export default function Catalog() {
     const [dogs, setDogs] = useState([])
-    
+
     useEffect(() => {
         dogsAPI.getAll()
             .then(result => setDogs(result))
@@ -14,8 +14,11 @@ export default function Catalog() {
         <>
             <div className="catalog">
 
-                {dogs.map(dog => <Card {...dog} key={dog._id}/>)}
-                
+                {dogs.length > 0
+                    ? dogs.map(dog => <Card {...dog} key={dog._id} />)
+                    : <h3 className='not-available'>All puppies have home yay!</h3>
+                }
+
 
             </div>
         </>
