@@ -18,7 +18,7 @@ export default function Details() {
             <div className="details-container">
                 <div className="details-container-image">
                     <img
-                        src="" />
+                        src = {dog.imageUrl} />
                 </div>
                 <div className="details-container-info">
                     <h2>Name: {dog.name}</h2>

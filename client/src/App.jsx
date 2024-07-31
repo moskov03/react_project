@@ -24,7 +24,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/postDog' element={<PostDog />} />
-          <Route path='/catalog/:catalogId/details' element={<Details />} />
+          <Route path='/catalog/:dogId/details' element={<Details />} />
         </Routes>
 
       </main>
