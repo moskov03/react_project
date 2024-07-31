@@ -7,18 +7,26 @@ export default function Details() {
     const { dogId } = useParams()
 
     useEffect(() => {
-        (async () => {
-            const result = await dogAPI.getOne(dogId)
+        const fetchDog = async () => {
+            const result = await dogAPI.getOne(dogId);
+            setDog(result);
+        };
 
-            setDog(result)
-        })()
-    })
+        fetchDog();
+    }, [dogId]);
+
+
+    const submitLikeHandler = (e) => {
+        e.preventDefault()
+        console.log('works');
+    }
+
     return (
         <>
             <div className="details-container">
                 <div className="details-container-image">
                     <img
-                        src = {dog.imageUrl} />
+                        src={dog.imageUrl} />
                 </div>
                 <div className="details-container-info">
                     <h2>Name: {dog.name}</h2>
@@ -34,7 +42,7 @@ export default function Details() {
                     <a href="#">Edit</a>
                     <a href="#">Delete</a>
                     {/* <!-- logged in user who has not yet sign up for the course--> */}
-                    <a href="#">Like</a>
+                    <a href="#" onClick={submitLikeHandler}>Like</a>
                     {/* <!-- logged in user who has already sign up for the course--> */}
                     <p className="sign-up">You`ve already liked this puppy</p>
                 </div>
