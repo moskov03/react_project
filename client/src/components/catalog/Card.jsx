@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Card({ name, breed, age, imageUrl, _id }) {
 
     return (
@@ -8,7 +10,7 @@ export default function Card({ name, breed, age, imageUrl, _id }) {
                     <p>Name - {name}</p>
                     <p>Breed - {breed}</p>
                     <p>Age - {age}</p>
-                    <button>Details</button>
+                    <button><Link to={`/catalog/${_id}/details`}>Details</Link></button>
                 </div>
             </div>
         </>

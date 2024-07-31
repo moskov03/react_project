@@ -10,3 +10,12 @@ export const getAll = async () => {
 
     return dogs
 }
+
+export const getOne = (dogId) => request.get(`${BASE_URL}/${dogId}`)
+
+const dogAPI = {
+    getOne,
+    getAll
+}
+
+export default dogAPI
