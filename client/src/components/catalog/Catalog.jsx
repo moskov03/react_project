@@ -18,8 +18,7 @@ export default function Catalog() {
                     ? dogs.map(dog => <Card {...dog} key={dog._id} />)
                     : <h3 className='not-available'>All puppies have home yay!</h3>
                 }
-
-
+                
             </div>
         </>
     );
