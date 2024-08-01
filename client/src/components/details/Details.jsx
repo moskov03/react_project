@@ -61,9 +61,14 @@ export default function Details() {
                     <a href="#">Edit</a>
                     <a href="#">Delete</a>
                     {/* <!-- logged in user who has not yet sign up for the course--> */}
-                    <a href="#" onClick={submitLikeHandler} disabled={isLiked}>Like</a>
+                    {!isLiked ? (
+                        <a onClick={submitLikeHandler}>Like</a>
+                    ) : (
+                        <p className="sign-up">You`ve already liked this puppy</p>
+                    )}
+
                     {/* <!-- logged in user who has already sign up for the course--> */}
-                    <p className="sign-up">You`ve already liked this puppy</p>
+
                 </div>
             </div>
         </>
