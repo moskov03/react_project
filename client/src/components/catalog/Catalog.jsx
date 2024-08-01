@@ -1,15 +1,8 @@
-import { useEffect, useState } from 'react';
-import * as dogsAPI from '../../api/dogsAPI'
 import Card from './Card';
+import { useGetAllDogs } from '../../../hooks/useDogs';
 
 export default function Catalog() {
-    const [dogs, setDogs] = useState([])
-
-    useEffect(() => {
-        dogsAPI.getAll()
-            .then(result => setDogs(result))
-    }, [])
-
+    const [dogs, setDogs] = useGetAllDogs()
     return (
         <>
             <div className="catalog">
@@ -18,7 +11,7 @@ export default function Catalog() {
                     ? dogs.map(dog => <Card {...dog} key={dog._id} />)
                     : <h3 className='not-available'>All puppies have home yay!</h3>
                 }
-                
+
             </div>
         </>
     );
