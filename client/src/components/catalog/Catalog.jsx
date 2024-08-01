@@ -1,8 +1,8 @@
 import Card from './Card';
 import { useGetAllDogs } from '../../../hooks/useDogs';
-
+// setDogs
 export default function Catalog() {
-    const [dogs, setDogs] = useGetAllDogs()
+    const [dogs, ] = useGetAllDogs()
     return (
         <>
             <div className="catalog">

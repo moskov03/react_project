@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import dogsAPI from '../../api/dogsAPI'
+import dogsAPI from '../../client/src/api/dogsAPI'
 
 export function useGetAllDogs() {
     const [dogs, setDogs] = useState([])
