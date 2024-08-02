@@ -1,47 +1,65 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from 'axios'
+import { Link, useNavigate } from "react-router-dom";
+import { useRegister } from "../../../hooks/useAuth";
+import { useForm } from "../../../hooks/useForm";
+
+const initialValues = { email: '', password: '', rePassword: '' };
 
 export default function Register() {
+    const register = useRegister()
+    const navigate = useNavigate()
 
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmpassword, setRepass] = useState("");
+    const registerHandler = async ({ email, password,rePassword }) => {
+        if(password !== rePassword){
+            alert('Password !== rePassword')
+            return
+        }
 
-    // const regUser = async (e) => {
-    //     e.preventDefault();
-    //     if (password !== confirmpassword) {
-    //         alert("Passwords do not match");
-    //         return;
-    //     }
-    //     try {
-    //         const response = await axios.post('http://localhost:5050/register', {
-    //             username: username,
-    //             email: email,
-    //             password: password,
-    //         });
-    //         console.log(response.data); // Handle the response as needed
-    //         // Optionally, redirect the user or show a success message
-    //     } catch (error) {
-    //         console.error("There was an error registering the user!", error);
-    //     }
-    // };
+        try {
+            await register(email, password)
+            navigate('/')
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
+    const {
+        values,
+        changeHandler,
+        submitHandler,
+    } = useForm(initialValues, registerHandler)
 
     return (
         <>
             <div className="register-box">
                 <h1>Register</h1>
-                <form method="POST">
-                    <label>Username</label>
-                    <input type="text" name="username" onChange={(e) => { setUsername(e.target.value) }} placeholder="Username.." />
+                <form method="POST" onSubmit={submitHandler}>
+                    {/* <label>Username</label>
+                    <input type="text" name="username" placeholder="Username.." /> */}
                     <label>Email</label>
-                    <input type="text" name="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email.." />
+                    <input type="text"
+                        name="email"
+                        placeholder="Email.."
+                        value={values.email}
+                        onChange={changeHandler}
+                    />
+
                     <label>Password</label>
-                    <input type="password" name="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password.." />
+                    <input type="password"
+                        name="password"
+                        placeholder="Password.."
+                        value={values.password}
+                        onChange={changeHandler}
+                    />
+
                     <label>Confirm Password</label>
-                    <input type="password" name="repassword" onChange={(e) => { setRepass(e.target.value) }} placeholder="Confirm Password.." />
-                    <input type="submit" onClick={regUser} value="Submit" />
+                    <input type="password"
+                        name="rePassword"
+                        placeholder="Confirm Password.."
+                        value={values.rePassword}
+                        onChange={changeHandler}
+                    />
+
+                    <input type="submit" value="Submit" />
                 </form>
                 <p>Already have an account? <Link to="/login">Login here</Link></p>
             </div>
