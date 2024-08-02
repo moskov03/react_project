@@ -19,6 +19,7 @@ export default function Register() {
             navigate('/')
         } catch (err) {
             console.log(err.message);
+            alert(err.message)
         }
     }
 
