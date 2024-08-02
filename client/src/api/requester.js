@@ -16,6 +16,11 @@ async function requester(method, url, data) {
     const response = await fetch(url, options)
     const result = response.json()
 
+    if (!response.ok) {
+        console.log(response);
+        throw result
+    }
+
     return result
 }
 
