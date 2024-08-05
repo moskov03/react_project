@@ -14,3 +14,9 @@ export function useGetAllDogs() {
     return [dogs, setDogs]
 }
 
+
+export function useCreateDog() {
+    const dogCreateHandler = async (dogData) => dogsAPI.create(dogData)
+
+    return dogCreateHandler
+}
