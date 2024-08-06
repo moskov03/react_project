@@ -19,7 +19,6 @@ export default function PostDog() {
   const createHandler = async (values) => {
     console.log(values);
     
-    createDog(values);
     try {
       const { _id: dogId } = await createDog(values);
       navigate(`/dogs/${dogId}/details`)
