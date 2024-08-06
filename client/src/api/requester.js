@@ -3,8 +3,8 @@ async function requester(method, url, data) {
 
     const accessToken = localStorage.getItem('accessToken')
 
-    if(accessToken){
-        options.headers={
+    if (accessToken) {
+        options.headers = {
             ...options.headers,
             'X-Authorization': accessToken,
         }
@@ -22,16 +22,22 @@ async function requester(method, url, data) {
 
         options.body = JSON.stringify(data)
     }
-
-    const response = await fetch(url, options)
-    const result = await response.json()
-
-    if (!response.ok) {
+    try {
+        const response = await fetch(url, options)
         console.log(response);
-        throw result
-    }
+        
+        const result = await response.json()
 
-    return result
+        if (!response.ok) {
+            console.log(response);
+            throw result
+        }
+
+        return result
+    } catch (error) {
+        console.error('Error in requester:', error);
+        throw error;
+    }
 }
 
 export const get = requester.bind(null, 'GET')

@@ -5,7 +5,7 @@ import { useLogin } from "../../../hooks/useAuth";
 export default function Login() {
     const login = useLogin()
     const navigate = useNavigate()
-    
+
     const { values, changeHandler, submitHandler } = useForm(
         { email: '', password: '' },
         async ({ email, password }) => {
