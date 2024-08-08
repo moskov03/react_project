@@ -10,6 +10,7 @@ import Register from './components/register/Register'
 import Catalog from './components/catalog/Catalog'
 import PostDog from './components/post/PostDog'
 import Details from './components/details/Details'
+import Logout from './components/logout/Logout'
 
 
 
@@ -29,6 +30,7 @@ function App() {
             <Route path='/catalog' element={<Catalog />} />
             <Route path='/postDog' element={<PostDog />} />
             <Route path='/catalog/:dogId/details' element={<Details />} />
+            <Route path='/logout' element={<Logout/>}/>
           </Routes>
 
         </main>
