@@ -21,7 +21,7 @@ export default function PostDog() {
     
     try {
       const { _id: dogId } = await createDog(values);
-      navigate(`/dogs/${dogId}/details`)
+      navigate(`/catalog/${dogId}/details`)
     } catch (err) {
       console.log(err.message);
 
