@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
-
+import { AuthContext } from './contexts/authContext'
 
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
@@ -11,7 +11,7 @@ import Register from './components/register/Register'
 import Catalog from './components/catalog/Catalog'
 import PostDog from './components/post/PostDog'
 import Details from './components/details/Details'
-import { AuthContext } from './contexts/authContext'
+
 
 
 
@@ -21,7 +21,7 @@ function App() {
 
   const changeAuthState = (state) => {
 
-    localStorage.setItem('accessToken', state.accessToken)
+    sessionStorage.setItem('accessToken', state.accessToken)
 
     setAuthState(state)
   }
