@@ -1,7 +1,7 @@
 async function requester(method, url, data) {
     const options = {};
 
-    const accessToken = sessionStorage.getItem('accessToken')
+    const accessToken = localStorage.getItem('accessToken')
     console.log(accessToken);
     
     if (accessToken) {
