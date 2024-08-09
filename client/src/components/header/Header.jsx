@@ -5,6 +5,7 @@ import withAuth from '../../HOC/withAuth';
 
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 function Header({
     // eslint-disable-next-line react/prop-types
     auth,
@@ -36,6 +37,9 @@ function Header({
     );
 }
 
-const EnhancedHeader = withAuth(Header)
+// eslint-disable-next-line react-refresh/only-export-components
+export default withAuth(Header)
 
-export default EnhancedHeader
+
+
+//ne e zaduljitelno no e hubavo da se znae kakvo pravi HOC
