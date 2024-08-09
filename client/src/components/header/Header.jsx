@@ -13,7 +13,7 @@ export default function Component() {
                         <li><Link to="/catalog">Catalog</Link></li>
                         {isAuthenticated ? (<ul className='user'>
                             <li><Link to="/postDog">Create</Link></li>
-                            <li><Link to="/">Logout</Link></li>
+                            <li><Link to="/logout">Logout</Link></li>
                         </ul>)
                             :
                             (<ul className='guest'><li><Link to="/login">Login</Link></li>

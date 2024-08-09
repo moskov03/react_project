@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import usePersistedState from "../../hooks/usePersistedState";
-
+import { useContext } from "react";
 
 export const AuthContext = createContext({
     userId: '',
@@ -23,14 +23,15 @@ export function AuthContextProvider(props) {
     }
 
     const logout = () => {
+        localStorage.removeItem('accessToken')
         setAuthState(null)
     }
 
     const contextData = {
-        userId: authState._id,
-        email: authState.email,
-        accessToken: authState.accessToken,
-        isAuthenticated: !!authState.email,
+        userId: authState?._id,
+        email: authState?.email,
+        accessToken: authState?.accessToken,
+        isAuthenticated: !!authState?.email,
         changeAuthState,
         logout
     }
@@ -43,8 +44,9 @@ export function AuthContextProvider(props) {
     )
 }
 
-// export function useAuthContext() {
-//     const authData = useContext(AuthContext)
+// eslint-disable-next-line react-refresh/only-export-components
+export function useAuthContext() {
+    const authData = useContext(AuthContext)
 
-//     return authData
-// }
+    return authData
+}

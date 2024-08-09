@@ -1,6 +1,7 @@
 import { useContext } from "react"
-import { login, register } from "../src/api/authApi"
-import { AuthContext } from "../src/contexts/authContext"
+import { login, register, logout } from "../src/api/authApi"
+import { AuthContext, useAuthContext } from "../src/contexts/authContext"
+
 
 export const useLogin = () => {
     const { changeAuthState } = useContext(AuthContext)
@@ -50,4 +51,17 @@ export const useRegister = () => {
     }
 
     return registerHandler
+}
+
+
+
+export const useLogout = () => {
+    const { logout: localLogout } = useAuthContext()
+
+    const logoutHandler = async () => {
+        await logout()
+        localLogout()
+    }
+
+    return logoutHandler
 }

@@ -1,9 +1,9 @@
 import { Navigate } from "react-router-dom"
-import { useAuthContext } from "../../contexts/authContext"
+import { useLogout } from "../../../hooks/useAuth"
+
 
 export default function Logout() {
-
-    const { logout } = useAuthContext()
+    const logout = useLogout()
 
     logout()
 
