@@ -1,9 +1,18 @@
-import { useContext } from 'react';
+// import { useContext } from 'react';
 import { Link } from 'react-router-dom'
-import { AuthContext } from '../../contexts/authContext';
+// import { AuthContext } from '../../contexts/authContext';
+import withAuth from '../../HOC/withAuth';
 
-export default function Component() {
-    const { isAuthenticated } = useContext(AuthContext)
+
+
+function Header({
+    // eslint-disable-next-line react/prop-types
+    auth,
+}) {
+    // const { isAuthenticated } = useContext(AuthContext)
+    // eslint-disable-next-line react/prop-types
+    const { isAuthenticated } = auth
+
     return (
         <>
             <header>
@@ -26,3 +35,7 @@ export default function Component() {
         </>
     );
 }
+
+const EnhancedHeader = withAuth(Header)
+
+export default EnhancedHeader
