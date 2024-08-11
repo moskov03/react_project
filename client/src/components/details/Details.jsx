@@ -3,10 +3,12 @@ import dogAPI from "../../api/dogsAPI";
 import { useParams } from "react-router-dom";
 import likesApi from "../../api/likesApi";
 
+
 export default function Details() {
     const [dog, setDog] = useState({})
     const { dogId } = useParams()
     const [isLiked, setIsLiked] = useState(false);
+
 
     useEffect(() => {
         const fetchDog = async () => {
@@ -29,6 +31,18 @@ export default function Details() {
             // Send request to like the dog
             const updatedDog = await likesApi.like(dogId);
             setDog(updatedDog);
+            const fetchDog = async () => {
+                try {
+                    const result = await dogAPI.getOne(dogId);
+                    setDog(result);
+                } catch (error) {
+                    console.error("Error fetching dog details:", error);
+                }
+            };
+    
+            fetchDog();
+            
+
             setIsLiked(true);
             console.log('Like action successful');
         } catch (error) {
