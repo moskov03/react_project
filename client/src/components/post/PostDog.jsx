@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useCreateDog } from "../../../hooks/useDogs";
 import { useForm } from "../../../hooks/useForm";
+import { useAuthContext } from "../../contexts/authContext";
 
 
 const initialValues = {
@@ -9,12 +10,16 @@ const initialValues = {
   age: '',
   imageUrl: '',
   description: '',
+  ownerId: ''
 }
 
 
 export default function PostDog() {
   const navigate = useNavigate()
   const createDog = useCreateDog()
+
+  const { userId } = useAuthContext()
+  initialValues.ownerId = userId
 
   const createHandler = async (values) => {
     console.log(values);

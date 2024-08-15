@@ -59,13 +59,16 @@ export default function Details() {
         return <p>Loading...</p>
     }
 
-    const isOwner = userId === doge._ownerId
+    let isOwner = false
 
-    console.log(doge);
-    
+    if(userId == dog[0].ownerId){
+        isOwner = true
+    }
+
+   
     console.log(isOwner);
     console.log(userId);
-    console.log(doge._ownerId);
+    console.log(dog[0].ownerId);
     
     
     
@@ -85,12 +88,12 @@ export default function Details() {
                 <div className="details-container-content">
                     <p>{doge.description}</p>
                 </div>
-                {isOwner && (<div className="btn-container">
-
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
-
-                </div>)}
+                {isOwner && (
+                    <div className="btn-container">
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </div>
+                )}
 
 
             </div>
