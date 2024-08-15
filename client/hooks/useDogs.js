@@ -14,8 +14,10 @@ export function useGetAllDogs() {
     return [dogs, setDogs]
 }
 
-//oooooooooooooooooooooooooo 
-export function useGetOneDogs() {
+
+export function useGetOneDogs(dogId) {
+    const [dog, setDog] = useState({})
+
     useEffect(() => {
         (async () => {
             const result = await dogsAPI.getOne(dogId)
@@ -23,8 +25,14 @@ export function useGetOneDogs() {
             setDog(result)
         })()
     }, [])
+
+    return [
+        dog,
+        setDog
+    ]
 }
-//ooooooooooooooooooooooooooooooo
+
+
 
 export function useCreateDog() {
     const dogCreateHandler = async (dogData) => dogsAPI.create(dogData)

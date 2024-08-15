@@ -14,7 +14,7 @@ export const getAll = async () => {
 
 export const getOne = (dogId) => request.get(`${BASE_URL}/${dogId}`)
 
-export const create = (dogData) => request.post(`http://localhost:3030/jsonstore/dogs`, dogData)
+export const create = (dogData) => request.post(`http://localhost:3030/jsonstore/dogs`, dogData,)
 
 const dogAPI = {
     getOne,

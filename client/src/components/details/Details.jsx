@@ -1,90 +1,107 @@
 import { useEffect, useState } from "react";
 import dogAPI from "../../api/dogsAPI";
 import { useParams } from "react-router-dom";
-import likesApi from "../../api/likesApi";
+// import likesApi from "../../api/likesApi";
+import { useAuthContext } from "../../contexts/authContext";
+import { useGetOneDogs } from "../../../hooks/useDogs";
 
 
 export default function Details() {
-    const [dog, setDog] = useState({})
     const { dogId } = useParams()
-    const [isLiked, setIsLiked] = useState(false);
-
-
-    useEffect(() => {
-        const fetchDog = async () => {
-            try {
-                const result = await dogAPI.getOne(dogId);
-                setDog(result);
-            } catch (error) {
-                console.error("Error fetching dog details:", error);
-            }
-        };
-
-        fetchDog();
-    }, [dogId]);
-
-
-    const submitLikeHandler = async (e) => {
-        e.preventDefault();
-
-        try {
-            // Send request to like the dog
-            const updatedDog = await likesApi.like(dogId);
-            setDog(updatedDog);
-            const fetchDog = async () => {
-                try {
-                    const result = await dogAPI.getOne(dogId);
-                    setDog(result);
-                } catch (error) {
-                    console.error("Error fetching dog details:", error);
-                }
-            };
+    const [doge, setDog] = useGetOneDogs(dogId)
     
-            fetchDog();
-            
+    // const [isLiked, setIsLiked] = useState(false);
+    const  dog  = useGetOneDogs(dogId)
+    const { userId } = useAuthContext()
 
-            setIsLiked(true);
-            console.log('Like action successful');
-        } catch (error) {
-            console.error('Failed to like the dog:', error);
-        }
-    };
 
-    if (!dog) {
+    // useEffect(() => {
+    //     const fetchDog = async () => {
+    //         try {
+    //             const result = await dogAPI.getOne(dogId);
+    //             setDog(result);
+    //         } catch (error) {
+    //             console.error("Error fetching dog details:", error);
+    //         }
+    //     };
+
+    //     fetchDog();
+    // }, [dogId]);
+
+
+    // const submitLikeHandler = async (e) => {
+    //     e.preventDefault();
+
+    //     try {
+    //         // Send request to like the dog
+    //         const updatedDog = await likesApi.like(dogId);
+    //         setDog(updatedDog);
+    //         const fetchDog = async () => {
+    //             try {
+    //                 const result = await dogAPI.getOne(dogId);
+    //                 setDog(result);
+    //             } catch (error) {
+    //                 console.error("Error fetching dog details:", error);
+    //             }
+    //         };
+
+    //         fetchDog();
+
+
+    //         setIsLiked(true);
+    //         console.log('Like action successful');
+    //     } catch (error) {
+    //         console.error('Failed to like the dog:', error);
+    //     }
+    // };
+
+    if (!doge) {
         return <p>Loading...</p>
     }
 
+    const isOwner = userId === doge._ownerId
+
+    console.log(isOwner);
+    console.log(userId);
+    console.log(dog._ownerId);
+    
+    
+    
     return (
         <>
             <div className="details-container">
                 <div className="details-container-image">
                     <img
-                        src={dog.imageUrl} />
+                        src={doge.imageUrl} />
                 </div>
                 <div className="details-container-info">
-                    <h2>Name: {dog.name}</h2>
-                    <h3>Breed: {dog.breed}</h3>
-                    <h3>Age: {dog.age}</h3>
-                    <h3>Likes: {dog.likes}</h3>
+                    <h2>Name: {doge.name}</h2>
+                    <h3>Breed: {doge.breed}</h3>
+                    <h3>Age: {doge.age}</h3>
+                    <h3>Likes: {doge.likes}</h3>
                 </div>
                 <div className="details-container-content">
-                    <p>{dog.description}</p>
+                    <p>{doge.description}</p>
                 </div>
-                <div className="btn-container">
-                    {/* <!-- Only for registered user and creator of the course--> */}
+                {isOwner && (<div className="btn-container">
+
                     <a href="#">Edit</a>
                     <a href="#">Delete</a>
-                    {/* <!-- logged in user who has not yet sign up for the course--> */}
-                    {!isLiked ? (
-                        <a onClick={submitLikeHandler}>Like</a>
-                    ) : (
-                        <p className="sign-up">You`ve already liked this puppy</p>
-                    )}
 
-                    {/* <!-- logged in user who has already sign up for the course--> */}
+                </div>)}
 
-                </div>
+
             </div>
         </>
     );
 }
+
+
+
+// {
+//     isAuthenticated && !isLiked ? (
+//         <a onClick={submitLikeHandler}>Like</a>
+//     ) : (
+//     <p className="sign-up">You`ve already liked this puppy</p>
+// )
+// }
