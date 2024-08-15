@@ -61,9 +61,11 @@ export default function Details() {
 
     const isOwner = userId === doge._ownerId
 
+    console.log(doge);
+    
     console.log(isOwner);
     console.log(userId);
-    console.log(dog._ownerId);
+    console.log(doge._ownerId);
     
     
     
