@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../../hooks/useForm";
 import { useGetOneDogs } from "../../../hooks/useDogs";
 import dogAPI from "../../api/dogsAPI";
+import { useMemo } from "react";
 
 
 const initialValues = {
@@ -14,15 +15,16 @@ const initialValues = {
 
 
 export default function EditPost() {
+    const navigate = useNavigate()
     const { dogId } = useParams()
     const [dog, setDog] = useGetOneDogs(dogId)
-    const navigate = useNavigate()
+    const initialFormValues = useMemo(() => Object.assign({}, initialValues, dog), [dog])
 
     const {
         changeHandler,
         submitHandler,
         values,
-    } = useForm(Object.assign(initialValues, dog), async (values) => {
+    } = useForm(initialFormValues, async (values) => {
         const isConfirmed = confirm('Are you sure you want to apply the changes')
 
         if (isConfirmed) {
