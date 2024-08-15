@@ -11,6 +11,7 @@ import Catalog from './components/catalog/Catalog'
 import PostDog from './components/post/PostDog'
 import Details from './components/details/Details'
 import Logout from './components/logout/Logout'
+import EditPost from './components/details/Edit'
 
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route path='/postDog' element={<PostDog />} />
             <Route path='/catalog/:dogId/details' element={<Details />} />
             <Route path='/logout' element={<Logout/>}/>
+            <Route path='/dogs/:dogId/edit' element={<EditPost/>}/>
           </Routes>
 
         </main>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import dogAPI from "../../api/dogsAPI";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 // import likesApi from "../../api/likesApi";
 import { useAuthContext } from "../../contexts/authContext";
 import { useGetOneDogs } from "../../../hooks/useDogs";
@@ -9,9 +9,9 @@ import { useGetOneDogs } from "../../../hooks/useDogs";
 export default function Details() {
     const { dogId } = useParams()
     const [doge, setDog] = useGetOneDogs(dogId)
-    
+    const navigate = useNavigate()
     // const [isLiked, setIsLiked] = useState(false);
-    const  dog  = useGetOneDogs(dogId)
+    const dog = useGetOneDogs(dogId)
     const { userId } = useAuthContext()
 
 
@@ -61,19 +61,31 @@ export default function Details() {
 
     let isOwner = false
 
-    if(userId == dog[0].ownerId){
+    if (userId == dog[0].ownerId) {
         isOwner = true
     }
-    if(userId == undefined){
+    if (userId == undefined) {
         isOwner = false
     }
-   
+
     console.log(isOwner);
     console.log(userId);
     console.log(dog[0].ownerId);
-    
-    
-    
+
+    const dogDeleteHandler = async () => {
+        const isConfirmed = confirm('Are you sure you want to delete this?')
+
+        if (isConfirmed) {
+            try {
+                await dogAPI.remove(dogId)
+                navigate('/catalog')
+            } catch (err) {
+                alert(err.message)
+            }
+        }
+
+    }
+
     return (
         <>
             <div className="details-container">
@@ -92,8 +104,8 @@ export default function Details() {
                 </div>
                 {isOwner && (
                     <div className="btn-container">
-                        <a href="#">Edit</a>
-                        <a href="#">Delete</a>
+                        <Link to={`/dogs/${dogId}/edit`}>Edit</Link>
+                        <a href="#" onClick={dogDeleteHandler} >Delete</a>
                     </div>
                 )}
 
