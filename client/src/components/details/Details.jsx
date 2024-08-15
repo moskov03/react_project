@@ -64,7 +64,9 @@ export default function Details() {
     if(userId == dog[0].ownerId){
         isOwner = true
     }
-
+    if(userId == undefined){
+        isOwner = false
+    }
    
     console.log(isOwner);
     console.log(userId);
