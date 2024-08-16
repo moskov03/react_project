@@ -16,7 +16,15 @@ export function useGetAllDogs() {
 
 
 export function useGetOneDogs(dogId) {
-    const [dog, setDog] = useState({})
+    const [dog, setDog] = useState(
+        {
+            name: '',
+            breed: '',
+            age: '',
+            imageUrl: '',
+            description: '',
+        }
+    )
 
     useEffect(() => {
         (async () => {

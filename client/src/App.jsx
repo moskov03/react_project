@@ -12,6 +12,7 @@ import PostDog from './components/post/PostDog'
 import Details from './components/details/Details'
 import Logout from './components/logout/Logout'
 import EditPost from './components/details/Edit'
+import RouteGuard from './components/common/routeAuthAccess'
 
 
 
@@ -29,12 +30,11 @@ function App() {
             <Route path='/*' element={<Error />} />
             <Route path='/register' element={<Register />} />
             <Route path='/catalog' element={<Catalog />} />
-            <Route path='/postDog' element={<PostDog />} />
+            <Route path='/postDog' element={<RouteGuard><PostDog /></RouteGuard>} />
             <Route path='/catalog/:dogId/details' element={<Details />} />
-            <Route path='/logout' element={<Logout/>}/>
-            <Route path='/dogs/:dogId/edit' element={<EditPost/>}/>
+            <Route path='/logout' element={<RouteGuard><Logout/></RouteGuard>}/>
+            <Route path='/dogs/:dogId/edit' element={<RouteGuard><EditPost/></RouteGuard>}/>
           </Routes>
-
         </main>
         <Footer />
       </>

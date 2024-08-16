@@ -2,29 +2,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../../hooks/useForm";
 import { useGetOneDogs } from "../../../hooks/useDogs";
 import dogAPI from "../../api/dogsAPI";
-import { useMemo } from "react";
-
-
-const initialValues = {
-    name: '',
-    breed: '',
-    age: '',
-    imageUrl: '',
-    description: '',
-}
 
 
 export default function EditPost() {
     const navigate = useNavigate()
     const { dogId } = useParams()
     const [dog, setDog] = useGetOneDogs(dogId)
-    const initialFormValues = useMemo(() => Object.assign({}, initialValues, dog), [dog])
 
     const {
         changeHandler,
         submitHandler,
         values,
-    } = useForm(initialFormValues, async (values) => {
+    } = useForm(dog, async (values) => {
         const isConfirmed = confirm('Are you sure you want to apply the changes')
 
         if (isConfirmed) {
@@ -32,9 +21,7 @@ export default function EditPost() {
             navigate(`/catalog/${dogId}/details`)
         }
 
-    })
-
-
+    },{ reinitializeForm: true })
 
     return (
         <>
