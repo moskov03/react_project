@@ -13,6 +13,7 @@ import Details from './components/details/Details'
 import Logout from './components/logout/Logout'
 import EditPost from './components/details/Edit'
 import RouteGuard from './components/common/routeAuthAccess'
+import Search from './components/search/Search'
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <main>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/search' element={<Search />} />
             <Route path='/login' element={<Login />} />
             <Route path='/*' element={<Error />} />
             <Route path='/register' element={<Register />} />

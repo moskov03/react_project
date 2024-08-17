@@ -21,6 +21,7 @@ function Header({
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/catalog">Catalog</Link></li>
+                        <li><Link to="/search">Search</Link></li>
                         {isAuthenticated ? (<ul className='user'>
                             <li><Link to="/postDog">Create</Link></li>
                             <li><Link to="/logout">Logout</Link></li>
