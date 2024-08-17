@@ -21,7 +21,7 @@ export default function EditPost() {
             navigate(`/catalog/${dogId}/details`)
         }
 
-    },{ reinitializeForm: true })
+    }, true)
 
     return (
         <>
