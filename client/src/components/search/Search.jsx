@@ -29,7 +29,6 @@ export default function Search() {
                         onChange={handleInputChange}
                         placeholder="Search here..."
                     />
-                    <input type="submit" value="Search" />
                 </form>
             </div>
 

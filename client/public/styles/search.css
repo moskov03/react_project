@@ -1,14 +1,14 @@
 .search-box {
     color: white;
     width: 360px;
-    height: 250px;
+    height: 150px;
     margin: auto;
     background-color: #dbd1c1;
     border: 2px solid black;
     border-radius: 20px;
     color: black;
     margin-top: 80px;
-    padding-bottom: 331px;
+    padding-bottom: 200px;
 }
 
 .search-box h1 {
