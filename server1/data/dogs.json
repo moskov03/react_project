@@ -1,18 +1,72 @@
 {
 "742ff0e2-62d3-4c78-b3df-7cad665ed541": {
         "name": "Oscar",
-        "breed": "GSD",
+        "breed": "German Shepherd",
         "age": "6",
-        "description": "cute doge",
+        "description": "Meet Oscar, an energetic and inquisitive German Shephard with a year of adventures under his belt. At just one year old, Oscar is full of youthful exuberance and a love for life that’s truly infectious. His classic Beagle looks—those soulful eyes, floppy ears, and that signature tricolor coat—make him absolutely irresistible.",
         "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXH7X7N1brTYAycmTjOZzgPZjQHZkjk612Ew&s",
         "_id": "742ff0e2-62d3-4c78-b3df-7cad665ed541"
     },
     "628b4dd1-b200-4324-a29b-c116ef277650": {
         "name": "Ivan",
         "breed": "Doberman",
-        "age": "4",
-        "description": "cute doge",
+        "age": "2",
+        "description": "This is Ivan, a strikingly handsome Doberman Pinscher with a commanding presence and a heart full of devotion. At two years old, Duke is in the peak of his youth—full of energy, agility, and a zest for life. He’s a true athlete, always ready for a run, a game of fetch, or any activity that keeps him on the move.",
         "imageUrl": "https://media-be.chewy.com/wp-content/uploads/2021/06/02102805/Doberman-Pinscher_Featured-Image.jpg",
         "_id": "628b4dd1-b200-4324-a29b-c116ef277650"
+    },
+    "37113423-e9aa-4d44-82bf-d397a0ae3143": {
+        "name": "Max",
+        "breed": "German Shepherd",
+        "age": "3",
+        "imageUrl": "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg",
+        "description": "This is Max, a noble German Shepherd with a heart as strong as his physique. At three years old, Max is in the prime of his life, embodying the perfect balance between energy and maturity. He’s loyal to the core and has a protective instinct, making him not only a wonderful companion but also a vigilant guardian for your home.",
+        "ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_id": "37113423-e9aa-4d44-82bf-d397a0ae3143"
+    },
+    "a00ed521-5dbe-4c47-b107-01d11fad2586": {
+        "name": "Bella",
+        "breed": "German Shepherd",
+        "age": "4",
+        "imageUrl": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2020/03/30104511/German-Shepherd-Dog-standing-stacked-in-profile-in-the-park-800x600.jpg",
+        "description": "Meet Bella, a graceful German Shepherd with a regal stance and a heart full of love. At four years old, Bella has developed into a confident, composed, and affectionate companion. She’s known for her calm demeanor and gentle spirit, making her an ideal match for a family looking for a loyal friend.",
+        "ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_id": "a00ed521-5dbe-4c47-b107-01d11fad2586"
+    },
+    "f87c826a-8109-4df9-8b2e-11a1c0d62dea": {
+        "name": "Diesel",
+        "breed": "Pitbull",
+        "age": "3",
+        "imageUrl": "https://www.dogster.com/wp-content/uploads/2024/03/american-pitbull-terrier_Anna-Krivitskaya_Shutterstock-600x400.jpg",
+        "description": "Meet Diesel, a strong and affectionate American Pit Bull Terrier with a heart as big as his muscular frame. At three years old, Diesel is in his prime, full of energy, loyalty, and an undeniable zest for life. His striking appearance is matched by his gentle and loving nature, making him a wonderful companion for someone who understands and appreciates his breed.",
+        "ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_id": "f87c826a-8109-4df9-8b2e-11a1c0d62dea"
+    },
+    "9c025923-502e-404b-ac46-2c50764aafdd": {
+        "name": "Rocky",
+        "breed": "German Shepherd",
+        "age": "1",
+        "imageUrl": "https://thumbs.dreamstime.com/b/cute-puppy-dog-sofa-german-shepherd-lying-50712396.jpg",
+        "description": "Meet Rocky, an adorable German Shepherd puppy with a heart as big as his playful personality. At just a few months old, Rocky is full of boundless energy and an insatiable curiosity about the world around him. His soft fur and big, expressive eyes are impossible to resist, making him an instant favorite with everyone he meets.",
+        "ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_id": "9c025923-502e-404b-ac46-2c50764aafdd"
+    },
+    "95a22ada-ba43-4744-9e85-d0a1d63630a5": {
+        "name": "Ming",
+        "breed": "Shar Pei",
+        "age": "5",
+        "imageUrl": "https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg",
+        "description": "Meet Ming, a dignified and endearing Shar Pei with a distinctive appearance and a heart full of quiet affection. At five years old, Ming is the epitome of calm and composed maturity. With her characteristic wrinkled skin and soulful eyes, she captures attention wherever she goes, but it’s her gentle and loyal nature that truly wins hearts.",
+        "ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_id": "95a22ada-ba43-4744-9e85-d0a1d63630a5"
+    },
+    "ee965fca-ce1c-44ba-bd41-e9b7c4eb127c": {
+        "name": "Roxy",
+        "breed": "Pit Bull Terrier",
+        "age": "2",
+        "imageUrl": "https://image.petmd.com/files/styles/978x550/public/2023-03/pit-bull.jpg",
+        "description": "Meet Roxy, a strikingly beautiful American Pit Bull Terrier with a heart as warm as her affectionate gaze. At two years old, Roxy is a bundle of energy and love, perfectly balancing her playful spirit with a gentle and loving demeanor. Her sleek coat and muscular build reflect her strength, but it’s her sweet nature that truly shines through.",
+        "ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_id": "ee965fca-ce1c-44ba-bd41-e9b7c4eb127c"
     }
 }

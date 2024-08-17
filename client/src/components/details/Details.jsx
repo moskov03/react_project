@@ -97,7 +97,6 @@ export default function Details() {
                     <h2>Name: {doge.name}</h2>
                     <h3>Breed: {doge.breed}</h3>
                     <h3>Age: {doge.age}</h3>
-                    <h3>Likes: {doge.likes}</h3>
                 </div>
                 <div className="details-container-content">
                     <p>{doge.description}</p>
