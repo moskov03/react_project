@@ -4,15 +4,14 @@ import { useState } from 'react';
 
 export default function Search() {
 
-    const [dogs,] = useGetAllDogs(); // Fetch all dogs
-    const [query, setQuery] = useState(''); // State to hold the search query
-
-    // Handle input change to update query state
+    const [dogs,] = useGetAllDogs(); 
+    const [query, setQuery] = useState('');
+   
     const handleInputChange = (e) => {
         setQuery(e.target.value);
     };
 
-    // Filter the dogs based on the search query
+   
     const filteredDogs = dogs.filter(dog =>
         dog.breed.toLowerCase().includes(query.toLowerCase())
     );
